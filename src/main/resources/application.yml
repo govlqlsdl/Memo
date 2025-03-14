@@ -1,0 +1,8 @@
+Spring:
+    application:
+        name: Memo
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost3306/memo_govlqlsdl
+        username: root
+        password: root
