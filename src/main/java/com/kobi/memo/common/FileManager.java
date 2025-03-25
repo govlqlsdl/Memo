@@ -19,8 +19,8 @@ public class FileManager {
 		}
 		
 		// 파일 이름 유지 
-		// 폴더를 생성해서 파일을 저장 
-		// 사용자 정보를 폴더 이름으로 사용 한다 
+		// 폴더를 생성해서 파일을 저장
+		// 사용자 정보를 폴더 이름으로 사용 한다
 		// 시간 정보를 포함 
 		// UNIX TIME : 1970년 1월 1일 0시 0분 0 초 부터 흐른 시간을 milli second(1/1000) 단위로 표현한 값
 		// ex ) 5_312497120
@@ -55,10 +55,10 @@ public class FileManager {
 		}
 		
 		// 실제 파일 저장 위치와 url 경로를 매칭하는 규칙 
-		// E:\\dulumaryT\\web\\20241114\\project\\upload\\memo
+		// "D:\\project\\upload\\memo"
 		// /images/
 		
-		// E:\\dulumaryT\\web\\20241114\\project\\upload\\memo/5_132900923/test.png
+		// D:\\project\\upload\\memo/5_132900923/test.png
 		// /images/5_132900923/test.png
 		
 		return "/images" + directoryName + "/" + file.getOriginalFilename();
