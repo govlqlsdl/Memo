@@ -52,14 +52,50 @@ public class PostService {
 		return optionalPost.orElse(null);
 	}
 	
+	public boolean updatePost(int id, String title, String contents) {
+		Optional<Post> optionalPost = postRepository.findById(id);
+		
+		if(optionalPost.isPresent()) {
+			
+			Post post = optionalPost.get();
+			
+			post = post.toBuilder()
+			.title(title)
+			.contents(contents)
+			.build();
+			
+			try {
+				postRepository.save(post);
+			}catch(PersistenceException e) {
+				return false;
+			}
+			
+		}else {
+			return false;
+		}
+		return true;
+		
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	public boolean deletePost(int id) {
+		
+		Optional<Post> optionalPost = postRepository.findById(id);
+		
+		if(optionalPost.isPresent()) {
+			
+			Post post = optionalPost.get();
+			
+			try {				
+				postRepository.delete(post);
+			} catch(PersistenceException e) {
+				return false;
+			}
+			
+		} else {
+			return false;
+		}
+		
+		return true;
+	}
 	
 }
