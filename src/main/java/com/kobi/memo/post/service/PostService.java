@@ -85,6 +85,8 @@ public class PostService {
 			
 			Post post = optionalPost.get();
 			
+			FileManager.removeFile(post.getImagePath());
+			
 			try {				
 				postRepository.delete(post);
 			} catch(PersistenceException e) {
